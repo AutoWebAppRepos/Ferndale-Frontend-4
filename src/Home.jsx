@@ -190,7 +190,7 @@ const styles = {
     maxWidth: 500,
     marginBottom: 12,
     padding: "10px 12px",
-    background: "transparent",
+    background: "#1e293b",
     borderRadius: 10,
     display: "flex",
     justifyContent: "space-between",
