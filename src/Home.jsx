@@ -4,6 +4,7 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const session_id = useRef(Date.now());
 
   const chatRef = useRef(null);
   const textareaRef = useRef(null);
@@ -40,7 +41,7 @@ export default function Chat() {
       const res = await fetch("https://llm-cv-api.onrender.com/mother_query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: text }),
+        body: JSON.stringify({ prompt: text, session_id: session_id.current}),
       });
 
       const data = await res.json();
