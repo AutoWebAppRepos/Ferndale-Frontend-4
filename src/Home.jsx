@@ -37,7 +37,7 @@ export default function Chat() {
     setLoading(true);
 
     try {
-      const res = await fetch("/apihttps://llm-cv-api.onrender.com/mother_query", {
+      const res = await fetch("https://llm-cv-api.onrender.com/mother_query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: text }),
@@ -179,6 +179,12 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     background: "#0f172a",
+
+    backgroundImage: "url('/background.png')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "left top", // key part
+    
     color: "#e5e7eb",
     fontFamily: "Inter, system-ui, sans-serif",
     padding: "20px",
